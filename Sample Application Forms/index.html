@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1 id="title">Sample User Application Form</h1>
+    <p id="description">An example webpage form</p>
+    <form id="survey-form">
+        <label id="name-label">Name: <input type="text" id="name" placeholder="John Doe" required></label>
+        <label id="email-label">Email: <input type="email" id="email" placeholder="JohnDoe@gmail.com" required></label>
+        <label id="age-label">Age (>18): <input type="number" min="18" max="120" id="age" placeholder="18"
+                required></label>
+
+        <fieldset>
+            <label>Do you live in Canada?</label>
+            <select id="dropdown-resident" required>
+                <option value="">(select one)</option>
+                <option value="1">Canadian Resident</option>
+                <option value="2">Non-Canadian Resident</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Phone Type</legend>
+            <label><input class="inline" type="radio" value="Home" name="phone-type" checked>Home</label>
+            <label><input class="inline" type="radio" value="Work" name="phone-type">Work</label>
+            <label><input type="text" pattern="[0-9]{10}" placeholder="(123)-456-1234 ==> 1234561234" required></label>
+        </fieldset>
+        
+        <fieldset>
+            <label>Upload Resume</label><input type="file" name="file" id="resume" required>
+            <label>Upload Cover Letter</label><input type="file" name="file" id="cover-letter">
+        </fieldset>
+
+        <fieldset>
+            <label>Additional information</label>
+            <textarea placeholder="I like frogs." row="3" cols="30" id="additional-info"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <label><input class="inline" type="checkbox" value="1" id="newsletter">Would you like to receive our newsletter?</label>
+            <label><input class="inline" type="checkbox" value="2" id="terms-and-conditions" required>You consent to the <a href="https://youtu.be/oHg5SJYRHA0?t=43">terms and conditions</a></label>
+        </fieldset>
+
+        
+
+        <input id="submit" type="submit" text="Submit Application">
+    </form>
+</body>
+
+</html>
