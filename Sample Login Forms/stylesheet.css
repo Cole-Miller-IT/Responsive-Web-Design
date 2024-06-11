@@ -1,0 +1,22 @@
+#login-form {
+    border: 2px solid black;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    top: 50px;
+    font-family: sans-serif;
+    background-color: cadetblue;
+}
+
+img {
+    max-width: 30%;
+    padding-top: 50px;
+}
+
+#login-text {
+    font-size: 35px;
+}
+
+.login-elements {
+    background-color: whitesmoke;
+}
