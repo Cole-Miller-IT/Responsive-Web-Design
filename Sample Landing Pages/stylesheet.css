@@ -1,0 +1,16 @@
+@media only screen and (max-width: 420px) {
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+#nav-bar {
+    position: fixed;
+    top: 0;
+    display: flex;
+}
+
+#form {
+    display: flex;
+
+}
