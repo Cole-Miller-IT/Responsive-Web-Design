@@ -29,16 +29,16 @@
             <legend>Phone Type</legend>
             <label><input class="inline" type="radio" value="Home" name="phone-type" checked>Home</label>
             <label><input class="inline" type="radio" value="Work" name="phone-type">Work</label>
-            <label><input type="text" pattern="[0-9]{10}" placeholder="(123)-456-1234 ==> 1234561234" required></label>
+            <label><input type="text" pattern="[0-9]{10}" placeholder="1115551111" required></label>
         </fieldset>
         
         <fieldset>
             <label>Upload Resume</label><input type="file" name="file" id="resume" required>
-            <label>Upload Cover Letter</label><input type="file" name="file" id="cover-letter">
+            <label>Upload Cover Letter (Optional)</label><input type="file" name="file" id="cover-letter">
         </fieldset>
 
         <fieldset>
-            <label>Additional information</label>
+            <label>Additional information (Optional)</label>
             <textarea placeholder="I like frogs." row="3" cols="30" id="additional-info"></textarea>
         </fieldset>
 
@@ -50,6 +50,7 @@
         
 
         <input id="submit" type="submit" text="Submit Application">
+        <p>Disclaimer: Nothing will happen when you submit the form.</p>
     </form>
 </body>
 

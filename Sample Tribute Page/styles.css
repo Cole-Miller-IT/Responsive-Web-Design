@@ -1,0 +1,51 @@
+* {
+    background-color: bisque;
+    border: 2px solid black; /*debugging*/
+}
+
+#image {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+img {
+    display: block;
+}
+
+
+#header-info {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#header-info p {
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+#header-info h1 {
+    margin-bottom: 0.25em;;
+}
+
+#header-info p {
+    margin-top: 0;
+}
+
+#tribute-div, #img-caption {
+    font-size: 1.5rem;
+}
+
+#tribute-info {
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+
+#ending-info {
+    font-size: 1.5rem;
+    text-align: center;
+}
