@@ -1,18 +1,24 @@
 * {
     background-color: bisque;
-    border: 2px solid black; /*debugging*/
+     /*border: 2px solid black; debugging*/
+}
+
+#img-div {
+    text-align: center;
 }
 
 #image {
-    height: auto;
-    width: 100%;
-    max-width: 100%;
+    padding: 25px 25px 5px 25px;
+ 
 }
 
 img {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    max-width: 600px;
 }
-
 
 #header-info {
     display: block;
@@ -42,8 +48,26 @@ img {
     text-align: center;
 }
 
+@media (min-width: 0px) {
+    li {
+        padding: 0;
+    }
+}
 
+@media (min-width: 800px) {
+    li {
+        padding-right: 30%;
+    }
+    ul {
+        padding-left: 30%;
+    }
+}
 
+quote p {
+    font-style: italic;
+    margin-left: 20%;
+    margin-right: 20%;
+}
 
 #ending-info {
     font-size: 1.5rem;
