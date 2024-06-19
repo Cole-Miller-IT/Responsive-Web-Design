@@ -1,6 +1,16 @@
 * {
-    border: 1px solid black;
+    border: 1px solid black; /*debugging*/
 }
+
 #nav-bar {
     margin: left;
+}
+
+#main-doc {
+    display: flex;
+}
+
+#sections {
+    display: flex;
+    flex-direction: column;
 }
