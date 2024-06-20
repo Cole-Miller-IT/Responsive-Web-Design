@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <h1>Godot check this for reference https://technical-documentation-page.freecodecamp.rocks/</h1>
     <main id="main-doc">
         <nav id="navbar">
             <header>Godot Sections</header>
@@ -36,26 +35,47 @@
                 community-driven, empowering users to help shape their engine to match their expectations. It is supported by the Godot
                 Foundation not-for-profit.
                 </p>
-                <code></code>
+                <code>
+                    get_tree().create_timer(2)
+                </code>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>About contains this introduction as well as information about the engine, its history, its licensing, authors, etc. It
+                    also contains the Frequently asked questions.</li>
+                    <li>Getting Started contains all necessary information on using the engine to make games. It starts with the Step by step
+                    tutorial which should be the entry point for all new users. This is the best place to start if you're new!</li>
+                    <li>The Manual can be read or referenced as needed, in any order. It contains feature-specific tutorials and documentation.</li>
+                    <li>Contributing gives information related to contributing to Godot, whether to the core engine, documentation, demos or
+                    other parts. It describes how to report bugs, how contributor workflows are organized, etc. It also contains sections
+                    intended for advanced users and contributors, with information on compiling the engine, contributing to the editor, or
+                    developing C++ modules.</li>
+                    <li>Community is dedicated to the life of Godot's community. It points to various community channels like the Godot
+                    Contributors Chat and Discord and contains a list of recommended third-party tutorials and materials outside of this
+                    documentation.</li>
                 </ul>
-                <p></p>
+                <p>Every game engine revolves around abstractions you use to build your applications. In Godot, a game is a tree of nodes
+                that you group together into scenes. You can then wire these nodes so they can communicate using signals.
+                
+                These are the four concepts you will learn here. We're going to look at them briefly to give you a sense of how the
+                engine works. In the getting started series, you will get to use them in practice.</p>
             </section>
             <section class="main-section" id="Nodes">
                 <header>Nodes</header>
+                <p>Nodes are Godot's building blocks. They can be assigned as the child of another node, resulting in a tree arrangement. A
+                given node can contain any number of nodes as children with the requirement that all siblings (direct children of a
+                node) should have unique names.</p>
                 <p>You can get a reference to a node by calling the Node.get_node() method. For this to work, the child node must be
                 present in the scene tree. Getting it in the parent node's _ready() function guarantees that.
                 
                 If, for example, you have a scene tree like this, and you want to get a reference to the Sprite2D and Camera2D nodes to
                 access them in your script.
                 </p>
-                <code></code>
-                <p></p>
+                <code>
+                    var tween = create_tween()
+                </code>
+                <p>The last characteristic is important. Together, nodes form a tree, which is a powerful feature to organize projects.
+                Since different nodes have different functions, combining them produces more complex behavior. As we saw before, you can
+                build a playable character the camera follows using a CharacterBody2D node, a Sprite2D node, a Camera2D node, and a
+                CollisionShape2D node.</p>
             </section>
             <section class="main-section" id="Scenes">
                 <header>Scenes</header>
@@ -66,8 +86,22 @@
                     Scenes allow you to structure your game's code however you want. You can compose nodes to create custom and complex node
                     types, like a game character that runs and jumps, a life bar, a chest with which you can interact, and more.
                     </p>
-                    <code></code>
-                    <p></p>
+                    <code>
+                        <p>func _on_timer_timeout():</p>
+                        <p>visible = not visible</p>
+                    </code>
+                    <p>Scene tree: The SceneTree contains the active tree of nodes. When a node is added to the scene tree, it receives the
+                    NOTIFICATION_ENTER_TREE notification and its _enter_tree callback is triggered. Child nodes are always added after their
+                    parent node, i.e. the _enter_tree callback of a parent node will be triggered before its child's.
+                    
+                    Once all nodes have been added in the scene tree, they receive the NOTIFICATION_READY notification and their respective
+                    _ready callbacks are triggered. For groups of nodes, the _ready callback is called in reverse order, starting with the
+                    children and moving up to the parent nodes.
+                    
+                    This means that when adding a node to the scene tree, the following order will be used for the callbacks: _enter_tree of
+                    the parent, _enter_tree of the children, _ready of the children and finally _ready of the parent (recursively for the
+                    entire scene tree).
+                    </p>
             </section>
             <section class="main-section" id="Scripts">
                 <header>Scripts</header>
@@ -77,8 +111,16 @@
                     
                     GDScript is entirely independent from Python and is not based on it.
                     </p>
-                    <code></code>
-                    <p></p>
+                    <code>
+                        <p>var a # 'null' by default.</p>
+                        <p>a = 5 # Valid, 'a' becomes an integer.</p>
+                        <p>a = "Hi!" # Valid, 'a' changed to a string.</p>
+                    </code>
+                    <p>This, translated to reality, means that Godot used with GDScript is a combination designed to create games quickly and
+                    efficiently. For games that are very computationally intensive and can't benefit from the engine built-in tools (such as
+                    the Vector types, Physics Engine, Math library, etc), the possibility of using C++ is present too. This allows you to
+                    still create most of the game in GDScript and add small bits of C++ in the areas that need a performance boost.
+                    </p>
             </section>
             <section class="main-section" id="Debugging">
                 <header>Debugging</header>
@@ -86,8 +128,16 @@
                     Opening a project from the Project Manager spawns a new process, which stops the debugging session. To avoid that you
                     should launch directly into the project using -e and --path launch options.
                     </p>
-                    <code></code>
-                    <p></p>
+                    <code>
+                        <p>extends Sprite2D</p>
+                        
+                        <p>var speed = 400</p>
+                        <p>var angular_speed = PI</p>
+                    </code>
+                    <p>You can learn more about these launch options and other command line arguments in the command line tutorial.
+                    
+                    If you're using a code editor or an IDE to debug Godot, check out our configuration guides, which cover the setup
+                    process for building and debugging with your particular editor.</p>
             </section>
             <section class="main-section" id="Signals">
                 <header>Signals</header>
@@ -97,11 +147,28 @@
                 Signals are a delegation mechanism built into Godot that allows one game object to react to a change in another without
                 them referencing one another. Using signals limits coupling and keeps your code flexible.
                 
-                For example, you might have a life bar on the screen that represents the player's health. When the player takes damage
-                or uses a healing potion, you want the bar to reflect the change. To do so, in Godot, you would use signals.
+                
                 </p>
-                <code></code>
-                <p></p>
+                <code>
+                func _ready():
+                var timer = get_node("Timer")
+                timer.timeout.connect(_on_timer_timeout)
+                
+                
+                func _process(delta):
+                rotation += angular_speed * delta
+                var velocity = Vector2.UP.rotated(rotation) * speed
+                position += velocity * delta
+                
+                
+                func _on_button_pressed():
+                set_process(not is_processing())
+                
+                
+                
+                </code>
+                <p>For example, you might have a life bar on the screen that represents the player's health. When the player takes damage
+                or uses a healing potion, you want the bar to reflect the change. To do so, in Godot, you would use signals.</p>
             </section>
         </div>
     </main>

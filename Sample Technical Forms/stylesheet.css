@@ -1,16 +1,77 @@
 * {
-    border: 1px solid black; /*debugging*/
+    /*border: 1px solid black; /*debugging*/
 }
 
-#nav-bar {
-    margin: left;
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%; /*extends all the way down the page*/
+    width: 230px;
+    min-width: 230px;
+    border-right: 2px solid black;
+    text-align: left;
+    
 }
 
-#main-doc {
-    display: flex;
+#navbar h1 {
+    padding-left: 40px;
+    border-top: 1px solid black;
 }
 
+#navbar a {
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+#navbar header {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+main {
+    margin-left: 300px;
+}
+
+/*applied at 800px or less*/
+@media (max-width: 800px) {
+    #navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        max-height: 275px;
+    }
+    #navbar h1:last-of-type {
+        padding-bottom: 20px;
+        border-bottom: 2px solid black;
+    }
+
+    main {
+        margin-left: 0;
+        margin-top: 350px;
+    }
+
+}
+
+#sections header {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+code {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    background-color: rgb(235, 234, 234);
+}
+
+li {
+    padding-top: 20px;
+}
+/*
 #sections {
     display: flex;
     flex-direction: column;
 }
+
