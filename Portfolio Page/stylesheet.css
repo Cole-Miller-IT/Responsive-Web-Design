@@ -76,7 +76,8 @@ body {
 /*Projects*/
 #projects {
     background-color: #474b4f;
-    height: 75vh;
+    height: 900px;
+    width: 100%;
     padding-top: 10%;
     text-align: center;
     color: #86c232;
@@ -115,6 +116,12 @@ body {
         url("ProjectDefenceOfTowers.PNG");
 }
 
+#Responsive-web-design {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)),
+            url("responsiveImage.PNG");
+}
+
 #form {
     display: flex;
 
@@ -128,6 +135,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    background-color: #6b6e70;
 }
 
 #footer img {
