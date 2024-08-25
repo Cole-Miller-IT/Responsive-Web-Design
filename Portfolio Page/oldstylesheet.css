@@ -1,0 +1,184 @@
+* {
+    --color1: #61892f;
+    --color2: #86c232;
+    --color3: #222629;
+    --color4: #474B4f;
+    --color5: #6b6e70;
+    --color6: white;
+}
+
+
+
+
+
+
+body {
+    background-color: #222629;
+    margin: 0;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    height: 60px;
+    width: 100%;
+    background-color: #474b4f;
+}
+
+#nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#nav-list img {
+    height: 50px;
+    
+}
+
+#nav-list a {
+    text-decoration: none;
+    color: #86c232;
+}
+
+#nav-list li {
+    padding: 30px;
+    font-size: 1.5rem;
+    list-style-type: none;
+}
+
+
+/*welcome*/
+#welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 2rem;
+    color: #86c232;
+    /*background: linear-gradient(#222629, #474b4f);*/
+}
+
+#welcome p {
+    color: white;
+}
+
+
+
+/*Projects*/
+#projects {
+    background-color: #474b4f;
+    height: 900px;
+    width: 100%;
+    padding-top: 10%;
+    text-align: center;
+    color: #86c232;
+    font-size: 2.75rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 10px;
+    gap: 20px;
+}
+
+.grid-item {
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.grid-container a {
+    text-decoration: none;
+    color: white;
+    font-size: 2.5rem;
+}
+
+
+
+#defence {
+    grid-area: Defence;
+    /*Apply a dark overlay over the actual image*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)),
+        url("ProjectDefenceOfTowers.PNG");
+}
+
+#Responsive-web-design {
+    grid-area: ResponsiveDesign;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)),
+            url("responsiveImage.PNG");
+}
+
+#website-blocker {
+    grid-area: ChromeExtension;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)),
+        url(websiteBlocker.PNG);
+}
+
+#sky-high {
+    grid-area: SkyHigh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)),
+        url(SkyHigh.PNG);
+}
+
+#form {
+    display: flex;
+
+}
+
+
+/*Footer*/
+#footer {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #6b6e70;
+}
+
+#footer img {
+    width: 50px;
+    height: 50px;
+}
+
+#footer div {
+    margin-right: 40px;
+}
+
+#footer a {
+    margin-right: 40px;
+}
+
+/*Should go below the previous calls*/
+@media only screen and (max-width: 550px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "Defence"
+            "ResponsiveDesign"
+            "ChromeExtension"
+            "SkyHigh";
+    }
+}

@@ -1,0 +1,31 @@
+<p>
+    
+    I initial was using grid layout for just my projects section but after watching a tutorial
+    by Wes Bos https://www.youtube.com/watch?v=yAO5hsNuGZA I decided to redesign the website 
+    using grid layout for the projects and the main elements like nav, main, projects nad the footer.
+    This allowed me to make the website responsive while focusing on just one layout.
+    
+    
+    
+    
+    
+    One of the things I learned is that css's grid layout 1fr isn't a fixed size. What I mean
+    is that if you say 1fr but the contents overflow the 1fr it will take up more space
+    than the 1fr you specified. I spent far to long trying to understand what was happening,
+    but eventually found a solution thanks to stackOverflow https://stackoverflow.com/questions/47601564/equal-width-columns-in-css-grid
+    I quote "503
+    
+    The common answer of repeat(3, 1fr) is not quite correct.
+    
+    This is because 1fr is about the distribution of available(!) space. This breaks as soon as the content becomes bigger
+    than the track size. By default, it does not overflow and adjust the column width accordingly. That's why not all 1fr
+    are guaranteed to be of equal width. 1fr is actually rather just a shorthand for minmax(auto, 1fr).
+    
+    If you really need the columns to be the exact same width you should use:
+    
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    minmax(0, 1fr) allows the grid tracks to be as small as 0 but as large as 1fr, creating columns that will stay equal.
+    But, be aware that this will cause overflows if the content is bigger than the column or cannot be wrapped."
+
+    This man right here has saved me.
+</p>
