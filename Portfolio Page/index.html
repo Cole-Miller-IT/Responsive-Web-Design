@@ -1,36 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="content" content="width=device-width, initial-scale=1.0">
-        <title>My Portfolio Page</title>
-        <link rel="stylesheet" href="stylesheet.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="mediaQueries.css">
     </head>
     <body>
-        <div class="container">
-            <nav>Navbar</nav>
-            <main>Main</main>
-            <div class="projects">
-                <h2>My Projects</h2>
-                <div class="projectsContainer">
-                    <a href="" class="projectItem" id="project1">
-                        <p>Project 1 aaaaaaaaaaaaaaaaa</p>
-                    </a>
-                    <a href="" class="projectItem" id="project2">
-                        <p>Project 2</p>
-                    </a>
-                    <a href="" class="projectItem" id="project3">
-                        <p>Project 3</p>
-                    </a>
-                    <a href="" class="projectItem" id="project4">
-                        <p>Project 4</p>
-                    </a>
-                    <a href="" class="projectItem" id="project5">
-                        <p>Project 5</p>
-                    </a>
+        <nav id="desktopNav">
+            <div class="logo">
+                Cole Miller
+            </div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="hamburger-nav">
+            <div class="logo">
+                Cole Miller
+            </div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
                 </div>
             </div>
-            <footer>footer</footer>
-        </div>
+        </nav>
+        <section id="profile">
+            <div class="section-pic-container">
+                <img src="SkyHigh.PNG" alt="my profile picture">
+            </div>
+            <div class="section-text">
+                <p class="section-text-p1">Hello, I'm</p>
+                <h1 class="title">Miller</h1>
+                <p class="section-text-p2">Software Developer</p>
+                <div class="btn-container">
+                    <button class="btn btn1" onclick="window.open('SkyHigh.PNG')">Resume</button>
+                    <button class="btn btn2" onclick="loaction.href='./#contact'">Contact</button>  
+                </div>
+                <div id="socials-container">
+                    <img src="SkyHigh.PNG" alt="linkedIn profile" class="icon" onclick="location.href='linkedinURL here'">
+                    <img src="SkyHigh.PNG" alt="GitHub profile" class="icon" onclick="location.href='git hubURL here'">
+                </div>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
     </body>
 </html>
