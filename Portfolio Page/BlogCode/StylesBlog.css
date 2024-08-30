@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Project Image*/
+#project-image {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    height: 40vh;
+}
+
+#project-img img {
+    width: 90%;
+}
+
+/*Title*/
+h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 4rem;
+}
+
+/*Blog paragraphs*/
+#blog-text {
+    margin: 40px
+}
+
+/*Image gallery*/
+#img-gallery-container {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    position: relative;
+}
+
+#img-gallery-container img {
+    width: 100%;
+}
+
+.number-text {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+/*Buttons*/
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    color:aliceblue;
+    background-color: rgba(0, 0, 0, 0.589);    
+}
